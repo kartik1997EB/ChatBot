@@ -1,0 +1,25 @@
+<span *ngFor="let msg of msgs">
+<div class="container" *ngIf="msg.owner==='user'">
+    <img src="assets/user.png" alt="Avatar" style="width:100%;">
+    <p class="rightMsg">{{msg.containt}}</p>
+    <span class="time-right">11:00</span>
+</div>
+
+<div class="container darker" *ngIf="msg.owner==='robot'">
+    <img src="assets/robot.png" alt="Avatar" class="right" style="width:100%;">
+    <p>{{msg.containt}}</p>
+    <span class="time-left">11:01</span>
+</div>
+</span>
+<!-- <div class="footer">
+    <input type="text" [(ngModel)]="msgContaint">
+    <button (click)="sendMsg()">send</button>
+</div> -->
+<div class="footer">
+    <div class="msgDiv">
+        <input [(ngModel)]="msgContaint" class="form-control type_msg" placeholder="Type your message..." type="text">
+        <div class=" sendBtn">
+            <i class="material-icons " (click)="sendMsg()">send</i>
+        </div>
+    </div>
+</div>
